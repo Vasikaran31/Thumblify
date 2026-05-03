@@ -12,7 +12,6 @@ const thumbnailRoutes = require("./routes/thumbnailRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const HOST = process.env.HOST || "localhost";
 
 connectDB();
 
@@ -42,6 +41,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, HOST, () => {
-  console.log(`Server running on http://${HOST}:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
